@@ -149,7 +149,7 @@
 					<p class="card-text"><strong>Descripcion:</strong>Hotel en la amazona perfecto para tu descanso!</p>
 				</div>
 			<div>
-				<button type="button" class="btn btn-primary btn-reserva" data-toggle="modal" data-target="#contacto"><span class="oi oi-plus"></span>ver mas!</button>
+				<button type="button" class="btn btn-primary btn-reserva" data-toggle="modal" data-target="#contacto" ><span class="oi oi-plus"></span>ver mas!</button>
 				</div>
 			</div>
 			<div class="card card-hotel d-flex flex-column justify-content-between">
@@ -158,6 +158,7 @@
 				<h6 class="card-subtitle text-muted">España</h6>
 				<img src="/images/descarga.jpg" alt="hotel" class="card-img-top">
 				<p class=''><strong>Descripcion:</strong>Hotel en la amazona perfecto para tu descanso!</p>
+				<button type="button" class="btn btn-outline-success"  data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
 				</div>
 				<div>
 				<button type="button" class="btn btn-primary btn-reserva" data-toggle="popover" data-content="Consulta las promociones " title="promociones"><span class="oi oi-plus"></span>ver mas!</button>
@@ -233,11 +234,28 @@
 	$(function () {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
-  $('carousel').carousel(
+  $('.carousel').carousel(
 	  {interval:3000}
-  )
+  )});
+  $('#contacto').on('show.bs.modal', function(e){
+	console.log("el modal se esta mostrando");
+	$('#contactoBtn').removeClass('btn-outline-success');
+	$('#contactoBtn').addClass('btn-primary');
+	$('#contactoBtn').prop('disabled',true);
 
+  });
+  $('#contacto').on('shown.bs.modal', function(e){
+	console.log("el modal se mostro");
+  });
+  $('#contacto').on('hide.bs.modal', function(e){
+	console.log("el modal se oculta");
+  });
+  $('#contacto').on('hidden.bs.modal', function(e){
+	console.log("el modal se ocultó");
+	$('#contactoBtn').removeClass('btn-primary');
+	$('#contactoBtn').addClass('btn-outline-success');
+	$('#contactoBtn').prop('disabled',false);
 
-});
+  });
 </script>
 </html>
