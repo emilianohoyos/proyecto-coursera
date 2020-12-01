@@ -1,4 +1,8 @@
 $yellow:#fffa19;
+@mixin margenes($top,$bottom){
+    margin-top: top;
+    margin-bottom: bottom;
+}
 
 .jumbotron{
 	background-color:$yellow;

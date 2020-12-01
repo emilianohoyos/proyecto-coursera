@@ -6,13 +6,13 @@
 footer {
   padding: 10px 10px 0px 10px;
   background-color: #fffa19;
-  margin-top: 10px;
-  margin-bottom: 0px; }
+  margin-top: top;
+  margin-bottom: bottom; }
 
 .card-hotel {
   flex: 1 200px;
-  margin-top: 50px;
-  margin-bottom: 0px; }
+  margin-top: top;
+  margin-bottom: bottom; }
 
 .btn-reserva {
   width: 100%;
